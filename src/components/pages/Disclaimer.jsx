@@ -4,7 +4,7 @@ import NavBar from '@components/items/NavBar';
 
 function LoginPage(props) {
 
-  const { doUpdateUrl, authAccessToken } = props;
+  // const { doUpdateUrl, authAccessToken } = props;
 
   // maintain client-side routing for organization instead of relying on the authorization server
   // if (authAccessToken) {
@@ -20,8 +20,8 @@ function LoginPage(props) {
 }
 
 export default connect(
-  "doUpdateUrl",
-  "selectAuthAccessToken",
+  // "doAuth_UpdateUrl",
+  // "selectAuth_AccessToken",
   LoginPage
 );
 
