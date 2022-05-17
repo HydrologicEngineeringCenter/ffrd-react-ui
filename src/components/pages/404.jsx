@@ -1,4 +1,4 @@
-export default () => {
+const FourOhFour = () => {
   const base = process.env.REACT_APP_HOMEPAGE
   return (
     <div className="container">
@@ -8,3 +8,5 @@ export default () => {
     </div >
   )
 }
+
+export default FourOhFour
