@@ -1,0 +1,32 @@
+version: "3.9"
+services:
+  ffrd-react-ui:
+    container_name: FFRD_UI_REACT_DEV
+    image: node:18.1-alpine3.14
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/workspaces/nsi-survey-tool
+    # env_file:
+    #   - .devcontainer/devcontainer.ui.env
+    # environment:
+    working_dir: /workspaces/nsi-survey-tool
+    tty: true
+
+  auth:
+    image: jboss/keycloak:16.1.1
+    container_name: KEYCLOAK_FFRD_UI_REACT_DEV
+    command: ["-Djboss.http.port=8080","-Dkeycloak.migration.strategy=IGNORE_EXISTING"]
+    environment:
+      - DB_VENDOR=h2
+      - KEYCLOAK_USER=admin
+      - KEYCLOAK_PASSWORD=admin
+      - PROXY_ADDRESS_FORWARDING=true
+    ports:
+      - 8080:8080
+      - 8443:8443
+    volumes:
+      - kdata:/opt/jboss/keycloak/standalone/data
+
+volumes:
+  kdata:
