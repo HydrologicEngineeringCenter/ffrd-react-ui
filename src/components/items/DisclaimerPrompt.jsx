@@ -7,7 +7,7 @@ import {
   InputLabel
 } from '@mui/material';
 
-function DisclaimerPrompt(props) {
+function disclaimerPrompt(props) {
   const { doAuth_KeycloakAuthenticate } = props
   return (
     <Card className="border-solid w-3/6 my-12 font-sans text-base">
@@ -16,7 +16,7 @@ function DisclaimerPrompt(props) {
         <p>
           By using this IS (which includes any device attached to this IS), you consent to the following conditions:
         </p>
-        <ul>
+        <ul className="list-disc list-inside text-sm">
           <li>
             The USG routinely intercepts and monitors communications on this IS for purposes including, but not limited to, penetration testing, COMSEC monitoring, network operations and defense, personnel misconduct (PM), law enforcement (LE), and counterintelligence (CI) investigations.
           </li>
@@ -34,8 +34,8 @@ function DisclaimerPrompt(props) {
           </li>
         </ul>
       </CardContent>
-      <div class="flex justify-end">
-        <CardActions fullBleed>
+      <div className="flex justify-end">
+        <CardActions>
           <Button onClick={doAuth_KeycloakAuthenticate}>
             <InputLabel>I Agree</InputLabel>
           </Button>
@@ -45,7 +45,8 @@ function DisclaimerPrompt(props) {
   )
 }
 
-export default connect(
+const DisclaimerPrompt = connect(
   "doAuth_KeycloakAuthenticate",
-  DisclaimerPrompt
-);
+  disclaimerPrompt
+)
+export { DisclaimerPrompt }

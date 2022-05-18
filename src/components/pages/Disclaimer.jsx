@@ -1,14 +1,14 @@
 import React from 'react';
 import { connect } from 'redux-bundler-react';
 
-import DisclaimerPrompt from '@components/items/DisclaimerPrompt';
+import { DisclaimerPrompt } from '@components/items';
 
-function LoginPage(props) {
+function loginPage(props) {
   const { doUpdateUrl, authAccessToken } = props;
 
   if (authAccessToken) {
-    let base = process.env.REACT_APP_HOMEPAGE
-    doUpdateUrl("/" + base + "/splash");
+    const base = "/" + process.env.REACT_APP_HOMEPAGE?.replaceAll("/", "")
+    doUpdateUrl(base + "/splash");
   }
 
   return (
@@ -20,9 +20,10 @@ function LoginPage(props) {
   )
 }
 
-export default connect(
-  "doAuth_UpdateUrl",
+const Disclaimer = connect(
+  "doUpdateUrl",
   "selectAuth_AccessToken",
-  LoginPage
-);
+  loginPage
+)
+export { Disclaimer }
 

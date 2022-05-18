@@ -6,7 +6,7 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import castleIcon from '@src/static/castle.png';
 
-const NavBar = (props) => {
+function navBar(props) {
   // const { authFullname: userName } = props;
   const base = process.env.REACT_APP_HOMEPAGE
 
@@ -19,13 +19,14 @@ const NavBar = (props) => {
           color="inherit"
           aria-label="menu"
           sx={{ mr: 2 }}
+          href={base}
         >
           <Box
             component="img"
             sx={{
               width: 45,
             }}
-            alt="The house from the offer."
+            alt="USACE castle logo"
             src={castleIcon}
           />
         </IconButton>
@@ -33,8 +34,11 @@ const NavBar = (props) => {
     </AppBar>
   )
 }
-export default connect(
-  // 'selectAuthFullname',
-  NavBar
-);
+
+const NavBar = connect(
+  'selectAuth_Fullname',
+  navBar
+)
+
+export { NavBar }
 

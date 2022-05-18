@@ -9,4 +9,4 @@ const FourOhFour = () => {
   )
 }
 
-export default FourOhFour
+export { FourOhFour }
