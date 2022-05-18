@@ -7,7 +7,8 @@
     "paths": {
       "src/*": ["./src/*"],
       "@components/*": ["./src/components/*"],
-      "@bundles/*": ["./src/bundles/*"]
+      "@bundles/*": ["./src/bundles/*"],
+      "@lib/*": ["./src/lib/*"]
     }
   }
 }

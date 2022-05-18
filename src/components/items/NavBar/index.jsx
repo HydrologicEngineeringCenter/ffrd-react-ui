@@ -1,10 +1,10 @@
-import { connect } from 'redux-bundler-react'
+import { connect } from 'redux-bundler-react';
 
-import AppBar from '@mui/material/AppBar'
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
-import Typography from '@mui/material/Typography';
+import castleIcon from '@src/static/castle.png';
 
 const NavBar = (props) => {
   // const { authFullname: userName } = props;
@@ -20,11 +20,15 @@ const NavBar = (props) => {
           aria-label="menu"
           sx={{ mr: 2 }}
         >
-          <MenuIcon />
+          <Box
+            component="img"
+            sx={{
+              width: 45,
+            }}
+            alt="The house from the offer."
+            src={castleIcon}
+          />
         </IconButton>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          Photos
-        </Typography>
       </Toolbar>
     </AppBar>
   )
