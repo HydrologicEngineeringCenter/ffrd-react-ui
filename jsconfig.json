@@ -1,13 +1,9 @@
 {
+  "extends": "./jsconfig.paths.json",
   "exclude": [
     "node_modules"
   ],
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "src/*": ["./src/*"],
-      "@components/*": ["./src/components/*"],
-      "@bundles/*": ["./src/bundles/*"]
-    }
+    "baseUrl": "."
   }
 }

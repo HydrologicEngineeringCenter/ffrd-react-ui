@@ -6,12 +6,12 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - .:/workspaces/nsi-survey-tool
+      - .:/workspaces/ffrd-react-ui
     # env_file:
     #   - .devcontainer/devcontainer.ui.env
     environment:
       - REACT_APP_HOMEPAGE=ffrd-ui
-    working_dir: /workspaces/nsi-survey-tool
+    working_dir: /workspaces/ffrd-react-ui
     tty: true
 
   auth:
