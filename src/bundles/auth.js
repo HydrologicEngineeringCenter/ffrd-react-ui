@@ -59,7 +59,6 @@ const auth = {
       redirectUrl: keycloakRedirect,
       refreshInterval: 30,
       sessionEndWarning: 600,
-      clientSecret: keycloakClientSecret,
 
       onAuthenticate: (token) => {
         store.doAuth_Update(token);
@@ -117,10 +116,10 @@ const auth = {
     });
   },
 
-  selectAuthAccessToken: state => state.auth.data?.jwt,
-  selectAuthFullname: state => state.auth.data?.fullName,
-  selectAuth_roles: state => state.auth.data?.roles,
-  selectAuth_userId: state => state.auth.data?.userId,
+  selectAuth_AccessToken: state => state.auth.data?.jwt,
+  selectAuth_Fullname: state => state.auth.data?.fullName,
+  selectAuth_Roles: state => state.auth.data?.roles,
+  selectAuth_UserId: state => state.auth.data?.userId,
 };
 
 export default auth;
